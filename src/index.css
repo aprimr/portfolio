@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+/* Enable class-based dark mode for Tailwind v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Theme Configuration */
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --max-width-content: 920px;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  body {
+    @apply bg-white text-neutral-900 dark:bg-neutral-950 dark:text-neutral-100 transition-colors duration-200;
+    font-family: var(--font-sans);
+  }
+   ::selection {
+    @apply bg-black text-white;
+  }
+  .dark ::selection {
+    @apply bg-white text-black;
+  }
+  /* Focus states for accessibility */
+  a:focus-visible, button:focus-visible {
+    @apply outline-none ring-2 ring-neutral-900 dark:ring-neutral-100 ring-offset-2 ring-offset-white dark:ring-offset-neutral-950 rounded-sm;
+  }
+}
+
+/* Minimal Markdown styling */
+.prose h1 { @apply text-2xl font-semibold mt-8 mb-4; }
+.prose h2 { @apply text-xl font-semibold mt-6 mb-3; }
+.prose h3 { @apply text-lg font-semibold mt-4 mb-2; }
+.prose p { @apply my-4 leading-relaxed; }
+.prose ul { @apply list-disc pl-6 my-4 space-y-1; }
+.prose ol { @apply list-decimal pl-6 my-4 space-y-1; }
+.prose code { @apply font-mono text-sm bg-neutral-100 dark:bg-neutral-900 px-1.5 py-0.5 rounded; }
+.prose pre { 
+  @apply font-mono text-sm bg-neutral-100 dark:bg-neutral-900 p-4 rounded-md overflow-x-auto my-6; 
+}
+.prose pre code { @apply bg-transparent p-0; }
+.prose a { @apply underline underline-offset-2 hover:text-neutral-600 dark:hover:text-neutral-400; }
+.prose blockquote { @apply border-l-2 border-neutral-300 dark:border-neutral-700 pl-4 italic my-4; }
+
+
+:root {
+  font-family: "Inter", sans-serif;
+}
+
+html {
+  scrollbar-width: none;
+  color-scheme: light;
+}
+
+
+html.dark {
+  color-scheme: dark;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 25s linear infinite;
+}
+
+.animate-scroll:hover {
+  animation-play-state: paused;
+}
