@@ -4,8 +4,8 @@
   "enabled": true,
   "order": 1,
   "title": "ReportIt",
-  "shortDescription": "Community complaint management mobile application.",
-  "stack": ["Go", "Flutter", "PostgreSQL", "JWT", "Cloudinary"],
+  "shortDescription": "A complaint reporting system built to simplify reporting community issues.",
+  "stack": ["Go", "Flutter", "PostgreSQL", "JWT"],
   "links": {
     "github": { "url": "https://github.com/aprimr/reportit" },
     "demo": { "url": null },
@@ -13,15 +13,19 @@
   }
 }
 ---
-
-# ReportIt
-
-> A community complaint management mobile application built with **Go** and **Flutter**.
-
 ## Overview
 
-ReportIt is a community complaint management application where users can submit and track complaints, while administrators can manage complaints and users.
+ReportIt makes it easier to report community issues without paperwork and unnecessary hassle. Users can submit a complaint with an image, details, and a location using Google Maps or their device's current location.
 
+## Implementation
+
+Built the backend with Go using a repository, service, and handler architecture, with PostgreSQL as database.
+
+Implemented JWT authentication with access and refresh tokens, refresh token rotation, and role-based authentication and authorization across the backend and mobile application.
+
+## What I Learned
+
+Access and refresh token authentication, refresh token rotation, role-based authorization, and integrating Google Maps and device location in Flutter.
 
 ---
 {
@@ -38,44 +42,34 @@ ReportIt is a community complaint management application where users can submit 
   }
 }
 ---
-
-# TinyPanda Interpreter
-
-> A toy interpreted programming language written in **Go lang**.
-
 ## Overview
 
-It started as a learning project based on [*Writing an Interpreter in Go*](https://interpreterbook.com) and was later extended with additional features like `float data type`, `ternary operator`, `loops`, `builtin functions`, etc.
+TinyPanda is an interpreted programming language written in Go, with support for variables, functions, loops, operators, built-in functions, and multiple data types.
 
----
-{
-  "id": "event-ticketing-api",
-  "enabled": true,
-  "order": 3,
-  "title": "Event Ticketing API",
-  "shortDescription": "A REST API for event and ticket management.",
-  "stack": ["Go", "PostgreSQL"],
-  "links": {
-    "github": {
-      "enabled": true,
-      "url": "https://github.com/aprimr/event-ticketing-api"
-    },
-    "demo": {
-      "enabled": false,
-      "url": ""
-    },
-    "download": {
-      "enabled": false,
-      "url": ""
-    }
-  }
-}
----
+It also includes a web playground where TinyPanda programs can be written and executed directly in the browser.
 
-# Event Ticketing API
+## Implementation
 
-> A REST API for managing events and ticket bookings.
+The interpreter follows the **lexer → parser → AST → evaluator** pipeline.
 
-## Overview
+I extended the language with:
 
-A backend built with **Go** and **PostgreSQL**, focusing on API design, database transactions, and ticket booking.
+- `for` and `loop` statements
+- Increment and decrement operators
+- Ternary operators
+- Floating-point values
+- Escape characters and comments
+- Additional built-in functions
+- Type conversion, string, math, and time/date utilities
+
+The web playground runs the Go interpreter through **WebAssembly**, allowing programs to be executed directly in the browser.
+
+![TinyPanda playground execution pipeline](https://tinypanda.is-cool.dev/assets/images/playground-arch-79f9dcb29adee2aec3e829df5db333ad.png)
+
+The diagram above shows how a TinyPanda program moves from the playground through the WebAssembly runtime and interpreter before returning the result.
+
+## What I Learned
+
+Working on this helped me understand how lexers, parsers, ASTs, and evaluators work together to execute a program.
+
+I also gained experience extending a language with new syntax and running a Go-based interpreter in the browser using WebAssembly.

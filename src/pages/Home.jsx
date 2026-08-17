@@ -16,6 +16,8 @@ export default function Home() {
     .filter(p => p.enabled)
     .sort((a, b) => a.order - b.order);
 
+  const headlineParts = hero.headline.split('>');
+
   return (
     <div className="space-y-24 md:space-y-32">
       
@@ -26,19 +28,23 @@ export default function Home() {
         
         {/* Headline text */}
         <h1 className="text-3xl md:text-5xl font-semibold tracking-tight leading-tight">
-          {hero.headline.split('[GO-Mascot]')[0]}
+          {headlineParts[0]}
           <span className="group relative inline-block align-baseline">
             <img src={Gopher} alt="Go" className="h-10 hidden md:block md:h-12 transition-opacity duration-150 group-hover:opacity-0"/>
             <img src={Go} alt="Go" className="h-10 block md:hidden md:h-12 transition-opacity duration-150 group-hover:opacity-0"/>
-            <span className="absolute left-0 top-0 opacity-0 transition-opacity duration-150 group-hover:opacity-100">Go</span>
+            <span className="absolute left-0 top-0 opacity-0 transition-opacity duration-150 group-hover:opacity-100">{headlineParts[1]}</span>
           </span>
           {hero.headline.split('[Gopher]')[1]}
         </h1>
+
+        {/* Secondary Headline Text */}
+        <p className="mt-4 text-lg leading-relaxed text-neutral-600 dark:text-neutral-400">{hero.secondaryHeadline}</p>
         
         {/* Buttons */}
         <div className="mt-10 flex items-center gap-8 sm:gap-12">
           <a
-            download={hero.resumeUrl}
+            href={hero.resumeUrl}
+            download="Aprim-Regmi-Resume.pdf"
             className="border-2 border-neutral-900 px-5 py-1.5 text-sm font-medium transition-colors bg-neutral-900 text-white hover:bg-white hover:text-neutral-900 dark:border-neutral-100 dark:bg-neutral-100 dark:text-neutral-900 dark:hover:bg-neutral-900 dark:hover:text-white cursor-pointer"
           >
             Resume

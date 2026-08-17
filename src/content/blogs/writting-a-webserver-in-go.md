@@ -1,7 +1,7 @@
 ---
 {
   "id": "writting-a-webserver-in-go",
-  "enabled": true,
+  "enabled": false,
   "title": "Writting a WebServer in Go",
   "description": "",
   "tags": ["Go", "Backend", "REST APIs"],

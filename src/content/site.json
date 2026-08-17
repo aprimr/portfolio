@@ -7,15 +7,16 @@
   "openToWork": true, 
   "currentCompanyRole": "",
   "hero": {
-    "headline": "Building fast and secure backend systems with [GO-Mascot]",
-    "resumeUrl": "/resume.pdf",
+    "headline": "Building fast and secure backend systems with >Go",
+    "secondaryHeadline": "Beyond the backend, I build mobile and web applications",
+    "resumeUrl": "/files/Aprim-Regmi-Resume.pdf",
     "githubUrl": "https://github.com/aprimr"
   },
   "nav": [
     { "label": "Blogs", "url": "/blogs" },
     { "label": "GitHub", "url": "https://github.com/aprimr", "external": true }
   ],
-  "skills": ["Go", "Chi", "JWT", "SQL", "PostgreSQL", "MongoDb",  "Dart", "Flutter", "Git", "Docker"],
+  "skills": ["Go", "JWT", "SQL", "PostgreSQL", "MongoDb",  "Dart", "Flutter", "Git", "Docker"],
   "contact": {
     "headline": "Let's work together",
     "email": "aprim.dev@gmail.com"
@@ -24,7 +25,7 @@
     "name": "Aprim Regmi",
     "links": {
       "github": { "enabled": true, "url": "https://github.com/aprimr" },
-      "linkedin": { "enabled": true, "url": "https://linkedin.com/in/aprimr" },
+      "linkedin": { "enabled": true, "url": "https://linkedin.com/in/aprimregmi" },
       "x": { "enabled": true, "url": "https://x.com/aprimre" }
     }
   }
