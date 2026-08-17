@@ -203,7 +203,6 @@ export default function BlogDetail() {
               [&_img]:my-6
               [&_img]:h-auto
               [&_img]:max-w-full
-              [&_img]:rounded-lg
             "
             dangerouslySetInnerHTML={{
               __html: html,

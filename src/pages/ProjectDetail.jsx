@@ -186,7 +186,6 @@ export default function ProjectDetail() {
               dark:[&_td]:border-neutral-800
 
               [&_img]:my-6
-              [&_img]:rounded-lg
             "
             dangerouslySetInnerHTML={{ __html: html }}
           />
