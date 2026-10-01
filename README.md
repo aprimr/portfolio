@@ -31,7 +31,7 @@ A minimalist, high-performance developer portfolio built with a focus on speed, 
 
 ## ⚙️ Configuration
 
-For a comprehensive breakdown of all settings—including SEO fields, color palettes, motion effects, navigation toggles, and home page section ordering—please refer to the [Portfolio Configuration Guide](docs/CONFIGURATION.md).
+For a comprehensive breakdown of all settings—including SEO fields, color palettes, motion effects, navigation toggles, and home page section ordering—please refer to the [Portfolio Configuration Guide](CONFIGURATION.md).
 
 ---
 
