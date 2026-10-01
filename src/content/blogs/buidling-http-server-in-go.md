@@ -3,7 +3,7 @@
   "id": "building-http-server-in-go",
   "enabled": true,
   "title": "Building a HTTP web server in Go",
-  "description": "",
+  "description": "A practical step-by-step guide to build a basic HTTP web server from scratch in Go using the net/http standard library.",
   "tags": ["Go", "Web Server", "Backend"],
   "createdAt": "2026-08-16"
 }

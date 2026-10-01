@@ -1,32 +1,178 @@
 {
+  "_help": "Keys starting with _ are notes and are ignored. Full guide: docs/CONFIGURATION.md",
+
   "seo": {
-    "title": "Aprim Regmi",
-    "description": "Personal portfolio of Aprim Regmi. Building fast and secure backend systems with Go."
+    "_help": "Search + social previews. siteUrl MUST be your real domain (used for canonical URLs, sitemap, share cards).",
+    
+    "siteUrl": "https://aprimregmi.com.np",
+    "title": "Aprim Regmi | Backend Developer",
+    "titleTemplate": "%s | Aprim Regmi",
+    "description": "Portfolio of Aprim Regmi, a backend developer specializing in Go, PostgreSQL, Redis, and Docker to build fast, secure, scalable systems.",
+    "jobTitle": "Backend Developer",
+    "ogImage": "/images/og-default.png",
+    "twitterHandle": "@aprimre",
+    "locale": "en_US"
   },
+
   "brand": "Aprim Regmi",
-  "openToWork": true, 
+  "openToWork": true,
   "currentCompanyRole": "",
+
+  "theme": {
+    "_help": "Colours for the whole site. Any value is a CSS colour (#hex, rgb(), hsl()). defauleMode: system | light | dark. accent is used sparingly: focus rings, active nav link, highlights. Delete any key to fall back to the default.",
+   
+    "defaultMode": "system",
+    "accent": { "light": "#007a99", "dark": "#38c6ea" },
+    "light": {
+      "background": "#ffffff",
+      "foreground": "#0a0a0a",
+      "muted": "#62626b",
+      "border": "#e6e6ea",
+      "surface": "#f5f5f6"
+    },
+    "dark": {
+      "background": "#0a0a0a",
+      "foreground": "#f4f4f5",
+      "muted": "#a1a1aa",
+      "border": "#27272a",
+      "surface": "#141415"
+    }
+  },
+
+  "effects": {
+    "_help": "Animations. Set any to false to turn it off. Users with 'reduce motion' enabled never see them anyway.",
+    
+    "heroIntro": true,
+    "scrollReveal": true,
+    "skillsMarquee": true,
+    "readingProgress": true
+  },
+
+  "header": {
+    "_help": "Top navigation bar. nav items: { label, url, external? }.",
+    
+    "enabled": true,
+    "sticky": true,
+    "showSearchButton": false,
+    "showThemeToggle": true,
+    "nav": [
+      { "label": "Blogs", "url": "/blogs" },
+      { "label": "GitHub", "url": "https://github.com/aprimr", "external": true }
+    ]
+  },
+
+  "commandPalette": {
+    "_help": "Ctrl/Cmd + K quick switcher. Choose what it can find.",
+    
+    "enabled": true,
+    "placeholder": "Search pages, articles, projects...",
+    "includeSections": true,
+    "includeArticles": true,
+    "includeProjects": true,
+    "includeLinks": true,
+    "includeActions": true
+  },
+
   "hero": {
-    "headline": "Building fast and secure backend systems with >Go",
-    "secondaryHeadline": "Beyond the backend, I build mobile and web applications",
+    "_help": "Top of the home page. Put '>>' right before the word that should become the Gopher image (e.g. 'with >>Go').",
+    
+    "headline": "Building fast, secure & scalable [[Backend Systems]] with >>Go",
+    "secondaryHeadline": "Beyond the backend, I also build mobile and web applications",
+    "availabilityLabel": "Open To Work",
     "resumeUrl": "/files/Aprim_Regmi_Resume.pdf",
+    "resumeFileName": "Aprim-Regmi-Resume.pdf",
     "githubUrl": "https://github.com/aprimr"
   },
-  "nav": [
-    { "label": "Blogs", "url": "/blogs" },
-    { "label": "GitHub", "url": "https://github.com/aprimr", "external": true }
-  ],
-  "skills": ["Go", "JWT", "SQL", "PostgreSQL", "MongoDb",  "Dart", "Flutter", "Git", "Docker"],
-  "contact": {
-    "headline": "Let's work together",
-    "email": "aprim.dev@gmail.com"
+
+  "homeSectionOrder": ["skills", "about", "experience", "projects", "latestBlogs", "contact"],
+
+  "skills": {
+    "_help": "style: 'marquee' or 'grid'.",
+
+    "enabled": true,
+    "style": "marquee",
+    "items": ["Go", "Dart", "PostgreSQL", "MongoDB", "Redis", "SQL", "REST APIs", "JWT", "Chi", "Docker", "Git", "Flutter"]
   },
+
+  "about": {
+    "_help": "Short bio. paragraphs = list of paragraphs.",
+
+    "enabled": true,
+    "heading": "About",
+    "paragraphs": [
+      "Hi, I'm Aprim Regmi. I'm a backend developer based in Nepal, focused on building fast and reliable systems.",
+      "I love figuring out how things work under the hood. Most of my time goes into database architecture, caching with Redis, and making APIs as fast as possible. I build scalable backends with Go, PostgreSQL, Docker, and MongoDB to power both web and mobile apps.",
+      "I enjoy turning complex backend problems into simple, readable code, and writing about what I learn along the way."
+    ]
+  },
+
+  "experience": {
+    "_help": "Timeline, newest first. Each item: period, role, company, description(list of string), tags (optional list), url (optional link on the company).",
+
+    "enabled": false,
+    "heading": "Work Experience",
+    "items": [
+      {
+        "period": "2026 - Present",
+        "role": "Backend developer",
+        "company": "Bahunbajey",
+        "description": [
+          "Designing and building backend systems and tools in Go."
+        ],
+        "tags": ["Go", "PostgreSQL", "Flutter"],
+        "url": "https://www.bahunbajey.com"
+      }
+    ]
+  },
+
+  "projects": {
+    "_help": "Projects themselves live in src/content/projects.md. This only controls the section.",
+
+    "enabled": true,
+    "heading": "Projects"
+  },
+
+  "latestBlogs": {
+    "_help": "Newest articles on the home page. count = how many to show.",
+
+    "enabled": true,
+    "heading": "Latest articles",
+    "count": 3,
+    "viewAllLabel": "View All"
+  },
+
+  "blog": {
+    "_help": "The /blogs page and the author box at the end of each article.",
+    
+    "heading": "Blogs",
+    "seoTitle": "Blogs",
+    "author": {
+      "enabled": true,
+      "heading": "About the author",
+      "email": "hello@aprimregmi.com.np"
+    }
+  },
+
+  "contact": {
+    "_help": "Big call-to-action at the bottom of the home page.",
+
+    "enabled": true,
+    "prompt": "Have a project in mind?",
+    "headline": "Let's work together",
+    "email": "hello@aprimregmi.com.np"
+  },
+
   "footer": {
+    "_help": "links: add/remove socials. Each: { enabled, url }. Use the key 'email' with a mailto: url for email.",
+
+    "enabled": true,
     "name": "Aprim Regmi",
+    "showBackToTop": true,
     "links": {
       "github": { "enabled": true, "url": "https://github.com/aprimr" },
       "linkedin": { "enabled": true, "url": "https://linkedin.com/in/aprimregmi" },
-      "x": { "enabled": true, "url": "https://x.com/aprimre" }
+      "x": { "enabled": true, "url": "https://x.com/aprimre" },
+      "email": { "enabled": true, "url": "mailto:hello@aprimregmi.com.np" }
     }
   }
 }

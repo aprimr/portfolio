@@ -1,25 +1,28 @@
 import { useEffect, useState } from 'react'
+import { isDark, toggleTheme } from '../util/theme.js'
 
 export default function ThemeToggle() {
-  const [isDark, setIsDark] = useState(
-    document.documentElement.classList.contains('dark')
-  )
+  const [dark, setDark] = useState(isDark)
 
   useEffect(() => {
-    document.documentElement.classList.toggle("dark", isDark);
-    localStorage.setItem("theme", isDark ? "dark" : "light");
-
-    document
-      .querySelector('meta[name="theme-color"]')
-      ?.setAttribute("content", isDark ? "#0a0a0a" : "#ffffff");
-  }, [isDark]);
+    const sync = () => setDark(isDark())
+    sync()
+    window.addEventListener('themechange', sync)
+    return () => window.removeEventListener('themechange', sync)
+  }, [])
 
   return (
     <button
-      aria-label="Toggle theme"
-      onClick={() => setIsDark(!isDark)}
-      className={`w-3 h-3 ${isDark? 'bg-white' : 'bg-black'} rounded-full transition-colors`}
+      type="button"
+      onClick={toggleTheme}
+      aria-label={dark ? 'Switch to light theme' : 'Switch to dark theme'}
+      className="relative cursor-pointer place-items-center rounded-md transition-colors"
     >
+      <div
+        className={`size-3 rounded-full transition-colors duration-300 ${
+          dark ? 'bg-white' : 'bg-black'
+        }`}
+      />
     </button>
   )
 }

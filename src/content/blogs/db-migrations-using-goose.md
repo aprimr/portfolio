@@ -3,7 +3,7 @@
   "id": "db-migrations-in-postgres-using-goose",
   "enabled": true,
   "title": "Database Migrations in Postgres Using Goose",
-  "description": "",
+  "description": "How we manage database migrations and seed sample data in a PostgreSQL using Goose.",
   "tags": ["Migrations", "Go", "PostgreSQL", "Goose"],
   "createdAt": "2026-08-24"
 }

@@ -44,12 +44,12 @@ export default function ProjectDetail() {
         {project.stack.length > 0 && (
           <ul className="mt-5 flex flex-wrap gap-1.5">
             {project.stack.map((s) => (
-              <li key={s} className="bg-surface px-2 py-0.5 text-xs text-muted">{s}</li>
+              <li key={s} className="rounded-md bg-surface px-2 py-0.5 text-xs text-muted">{s}</li>
             ))}
           </ul>
         )}
 
-        <div className="mt-6 flex flex-wrap items-center gap-5">
+        <div className="mt-6 flex flex-wrap items-center gap-3">
           {links.github?.url && <ExternalLink variant="button" label="GitHub" url={links.github.url} />}
           {links.demo?.url && <ExternalLink variant="button" label="Demo" url={links.demo.url} />}
           {links.download?.url && <ExternalLink variant="button" label="Download" url={links.download.url} />}

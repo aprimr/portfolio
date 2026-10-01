@@ -2,7 +2,11 @@
   command = "npm run build"
   publish = "dist"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# Every route is pre-rendered to its own HTML file at build time, so no SPA
+# catch-all redirect is needed. Unknown URLs get dist/404.html with a real
+# 404 status.
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"

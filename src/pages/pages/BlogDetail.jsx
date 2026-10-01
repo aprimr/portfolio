@@ -92,17 +92,21 @@ export default function BlogDetail() {
         </Link>
 
         <header>
-          <h1 className="text-4xl font-semibold font-heading leading-tight tracking-tight md:text-5xl">{blog.title}</h1>
+          <h1 className="text-4xl font-semibold leading-tight tracking-tight md:text-5xl">{blog.title}</h1>
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-muted">{blog.description}</p>
 
           <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-2 text-xs text-muted">
+            <span>
+              By <Link to="/" className="underline underline-offset-2 hover:text-ink">{site.brand}</Link>
+            </span>
+            <span aria-hidden="true">/</span>
             <time dateTime={blog.createdAt}>
               {new Date(blog.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
             </time>
             <span aria-hidden="true">/</span>
             <span>{blog.readingTime} min read</span>
-            <span aria-hidden="true">/</span>
             {blog.tags.map((tag) => (
-              <span key={tag} className="bg-surface px-2 py-0.5">{tag}</span>
+              <span key={tag} className="rounded-md bg-surface px-2 py-0.5">{tag}</span>
             ))}
           </div>
         </header>
@@ -113,7 +117,7 @@ export default function BlogDetail() {
 
         {related.length > 0 && (
           <section>
-            <h2 className="mb-4 text-2xl font-semibold font-heading tracking-tight">Keep reading</h2>
+            <h2 className="mb-4 text-lg font-semibold tracking-tight">Keep reading</h2>
             <ul className="space-y-3">
               {related.map((r) => (
                 <li key={r.id}>

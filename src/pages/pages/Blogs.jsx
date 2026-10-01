@@ -8,7 +8,7 @@ import Seo from '../components/Seo'
 import { SearchIcon } from '../components/icons.jsx'
 
 const chip = (active) =>
-  `shrink-0 cursor-pointer px-3.5 py-1.5 text-xs font-medium transition-colors ${
+  `shrink-0 cursor-pointer rounded-full px-3.5 py-1.5 text-xs font-medium transition-colors ${
     active ? 'bg-ink text-paper' : 'border border-line text-muted hover:border-ink/30 hover:text-ink'
   }`
 
@@ -38,6 +38,7 @@ export default function Blogs() {
 
       <header>
         <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">{site.blog.heading}</h1>
+        {site.blog.description && <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted">{site.blog.description}</p>}
       </header>
 
       <div className="space-y-5">
@@ -49,7 +50,7 @@ export default function Blogs() {
             placeholder="Search articles..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full border border-line bg-transparent py-2.5 pl-10 pr-4 text-sm transition-colors placeholder:text-muted focus:border-ink/40 focus:outline-none"
+            className="w-full rounded-lg border border-line bg-transparent py-2.5 pl-10 pr-4 text-sm transition-colors placeholder:text-muted focus:border-ink/40 focus:outline-none"
           />
         </div>
 
@@ -76,7 +77,7 @@ export default function Blogs() {
             </button>
 
             {sortOpen && (
-              <div className="absolute right-0 top-full z-20 mt-2 min-w-28 overflow-hidden border border-line bg-paper p-1 shadow-lg">
+              <div className="absolute right-0 top-full z-20 mt-2 min-w-28 overflow-hidden rounded-lg border border-line bg-paper p-1 shadow-lg">
                 {['newest', 'oldest'].map((o) => (
                   <button
                     key={o}
@@ -85,7 +86,7 @@ export default function Blogs() {
                       setSortOrder(o)
                       setSortOpen(false)
                     }}
-                    className={`block w-full cursor-pointer px-3 py-2 text-left text-xs transition-colors hover:bg-surface ${sortOrder === o ? 'bg-surface text-ink' : 'text-muted'}`}
+                    className={`block w-full cursor-pointer rounded-md px-3 py-2 text-left text-xs transition-colors hover:bg-surface ${sortOrder === o ? 'bg-surface text-ink' : 'text-muted'}`}
                   >
                     {o === 'newest' ? 'Newest' : 'Oldest'}
                   </button>
@@ -102,21 +103,19 @@ export default function Blogs() {
         ) : (
           filtered.map((b) => (
             <article key={b.id} className="group relative border-b border-line py-8">
-              <h2 className="text-xl font-semibold font-heading tracking-tight md:text-2xl">
+              <h2 className="text-xl font-semibold tracking-tight md:text-2xl">
                 <Link to={b.path} className="decoration-1 underline-offset-4 group-hover:underline after:absolute after:inset-0">
                   {b.title}
                 </Link>
               </h2>
               <p className="mt-2 max-w-2xl leading-relaxed text-muted">{b.description}</p>
-              <div className="mt-4 flex flex-wrap items-center gap-2 text-xs text-muted">
+              <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-muted">
                 <time dateTime={b.createdAt}>
                   {new Date(b.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
                 </time>
-                <p className="font-semibold text-muted/50">/</p>
                 <span>{b.readingTime} min read</span>
-                <p className="font-semibold text-muted/50">/</p>
                 {b.tags.map((t) => (
-                  <span key={t} className="bg-surface px-2 py-0.5">{t}</span>
+                  <span key={t} className="rounded-md bg-surface px-2 py-0.5">{t}</span>
                 ))}
               </div>
             </article>
