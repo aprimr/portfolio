@@ -5,7 +5,7 @@
     "_help": "Search + social previews. siteUrl MUST be your real domain (used for canonical URLs, sitemap, share cards).",
     
     "siteUrl": "https://aprimregmi.com.np",
-    "title": "Aprim Regmi | Backend Developer",
+    "title": "Go Backend Developer | Aprim Regmi | Chi, PostgreSQL, Docker",
     "titleTemplate": "%s | Aprim Regmi",
     "description": "Portfolio of Aprim Regmi, a backend developer specializing in Go, PostgreSQL, Redis, and Docker to build fast, secure, scalable systems.",
     "jobTitle": "Backend Developer",

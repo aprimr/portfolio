@@ -56,13 +56,13 @@ export default function Hero() {
           <span className="group relative inline-block align-baseline">
             <img
               src={Gopher}
-              alt="Go"
+              alt="Gopher"
               aria-hidden="true"
               className="h-8 sm:h-10 md:h-12 hidden md:block align-[-0.2em] transition-opacity duration-150 group-hover:opacity-0"
             />
             <img
               src={Go}
-              alt=""
+              alt="Go"
               aria-hidden="true"
               className="h-9 sm:h-10 md:h-12 block md:hidden align-[-0.2em] transition-opacity duration-150 group-hover:opacity-0"
             />
